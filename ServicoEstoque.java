@@ -1,6 +1,7 @@
 public class ServicoEstoque {
-    public static boolean isAvailable(Produto product) {
-        /* Verifica se o produto está disponível no estoque */
+    public boolean isAvailable(Produto product) {
+        System.out.println("Verificando estoque para: " + product.name);
+        // Lógica de verificação de estoque simulada
         return true;
     }
 }

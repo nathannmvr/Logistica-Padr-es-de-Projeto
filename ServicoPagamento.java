@@ -1,6 +1,7 @@
 public class ServicoPagamento {
-    public static boolean makePayment() {
-        /* Conecta-se a um serviço externo para efetuar o pagamento */
+    public boolean makePayment() {
+        System.out.println("Processando pagamento...");
+        // Lógica de pagamento simulada
         return true;
     }
 }

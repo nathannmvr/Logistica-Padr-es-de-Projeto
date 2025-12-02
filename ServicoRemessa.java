@@ -1,8 +1,6 @@
 public class ServicoRemessa {
-    public static void shipProduct(Produto product) {
-        /*
-         * Conecta-se a serviço externo de logística para enviar o
-         * produto
-         */
+    public void shipProduct(Produto product) {
+        System.out.println("Enviando o produto: " + product.name);
+        // Lógica de envio simulada
     }
 }

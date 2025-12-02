@@ -1,13 +1,23 @@
 public class OrderFacade {
+    private ServicoEstoque servicoEstoque;
+    private ServicoPagamento servicoPagamento;
+    private ServicoRemessa servicoRemessa;
+
+    public OrderFacade() {
+        this.servicoEstoque = new ServicoEstoque();
+        this.servicoPagamento = new ServicoPagamento();
+        this.servicoRemessa = new ServicoRemessa();
+    }
+
     public void placeOrder(Produto product) {
         System.out.println("Iniciando processo de pedido para: " + product.name);
         
-        if (ServicoEstoque.isAvailable(product)) {
+        if (servicoEstoque.isAvailable(product)) {
             System.out.println("Produto disponível no estoque.");
             
-            if (ServicoPagamento.makePayment()) {
+            if (servicoPagamento.makePayment()) {
                 System.out.println("Pagamento realizado com sucesso.");
-                ServicoRemessa.shipProduct(product);
+                servicoRemessa.shipProduct(product);
                 System.out.println("Produto enviado.");
                 System.out.println("Pedido finalizado com sucesso!");
             } else {
